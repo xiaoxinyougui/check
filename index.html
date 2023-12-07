@@ -49,12 +49,12 @@
             console.log("手机是64位");
             var el = document.getElementById("testLabel");
             // el.innerHTML = "手机是64位";
-            el.innerHTML = `navigator.platform:${navigator.platform};` ;
+            el.innerHTML = `navigator.platform:${navigator.platform};agent:${userAgent}` ;
 
         } else {
             console.log("手机是32位");
             var el = document.getElementById("testLabel");
-            el.innerHTML = `navigator.platform:${navigator.platform};` ;
+            el.innerHTML = `navigator.platform:${navigator.platform};agent:${userAgent}` ;
         }
 
     </script>

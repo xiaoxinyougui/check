@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>IndWin – Apps on Google Play</title>
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1 id="testLabel">test</h1>
+
+
+
+    </div>
+
+    <script>
+        console.error(navigator);
+        var s = "";
+        function getAllProperties(obj) {
+            var properties = [];
+            for (var prop in obj) {
+                if (obj.hasOwnProperty(prop)) {  // 筛选出对象自身的属性，而非原型链上的属性
+                    properties.push(prop);
+                }
+            }
+            return properties;
+        }
+        console.error(getAllProperties(navigator))
+        var userAgent = navigator.userAgent;
+        console.error(userAgent);
+        var is64Bit = false;
+
+        if (userAgent.indexOf('WOW64') !== -1 || userAgent.indexOf('Win64') !== -1) {
+            is64Bit = true;
+        } else if (userAgent.indexOf('x86_64') !== -1) {
+            is64Bit = true;
+        }
+
+        if (is64Bit) {
+            console.log("手机是64位");
+            var el = document.getElementById("testLabel");
+            // el.innerHTML = "手机是64位";
+            el.innerHTML = `navigator.platform:${navigator.platform};` ;
+
+        } else {
+            console.log("手机是32位");
+            var el = document.getElementById("testLabel");
+            el.innerHTML = `navigator.platform:${navigator.platform};` ;
+        }
+
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+
+
+    </script>
+
+    <!-- End Meta Pixel Code -->
+
+
+</body>
+
+</html>
